@@ -117,11 +117,6 @@ int main() {
 
     for (auto& c: C) {
       int u = c[0];
-      for (int v: c) {
-        if (d[r][u] > d[r][v]) {
-          u = v;
-        }
-      }
       add_undirected_edge(T, r, u);
       erase(c, u);
       f(f, u, c);
