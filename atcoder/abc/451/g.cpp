@@ -134,7 +134,6 @@ class BinaryTrie {
 };
 
 vector<lint> xor_basis(vector<lint> S) {
-  sort(rall(S));
   vector<lint> B;
   for (auto x: S) {
     for (auto y: B) chmin(x, x ^ y);
