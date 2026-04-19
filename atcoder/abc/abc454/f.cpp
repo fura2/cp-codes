@@ -67,7 +67,7 @@ void solve() {
   vector<lint> b(n / 2 + 2); // 両端に 0 を入れておく
   rep (i, n / 2) b[i + 1] = (a[i] - a[n - i - 1] + m) % m;
 
-  vector<lint> d(n / 2 + 1);// b の差分
+  vector<lint> d(n / 2 + 1); // b の差分
   rep (i, n / 2 + 1) d[i] = (b[i + 1] - b[i] + m) % m;
   sort(all(d));
 
