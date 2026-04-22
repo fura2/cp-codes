@@ -61,11 +61,9 @@ int main() {
   vector<int> l(q), r(q);
   rep (i, q) cin >> l[i] >> r[i], l[i]--;
 
-  vector<int> X = {n};
+  vector<int> X = {0, n};
   rep (i, q) {
-    X.emplace_back(max(l[i] - 1, 0));
     X.emplace_back(l[i]);
-    X.emplace_back(r[i] - 1);
     X.emplace_back(r[i]);
   }
   sort(all(X));
