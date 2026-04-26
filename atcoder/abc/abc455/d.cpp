@@ -74,25 +74,15 @@ int main() {
     nxt[c] = p;
   }
 
-  // path compression
-  rep (i, 2 * n) {
-    int p = i;
-    while (par[p] != -1) {
-      p = par[p];
-    }
-    int u = i;
-    while (par[u] != -1) {
-      int tmp = u;
-      u = par[u];
-      par[tmp] = p;
-    }
-  }
-  vector<int> ans(n);
   rep (i, n) {
-    int u = par[i] == -1 ? i : par[i];
-    ans[u]++;
+    int ans = 0;
+    int u = n + i;
+    while (par[u] != -1) {
+      u = par[u];
+      ans++;
+    }
+    cout << ans << " ";
   }
-  rep (i, n) cout << (par[n + i] == -1 ? 0 : ans[par[n + i]]) << " ";
 
   return 0;
 }
