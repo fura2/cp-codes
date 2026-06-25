@@ -5,3 +5,6 @@
 Competitive programming codes written by me
 
 Classification is based on [AtCoder Problems](https://kenkoooo.com/atcoder/#/table/).
+
+最近のコードは[ライブラリ](https://github.com/fura2/cp-library)を include して提出時に展開する方式で書かれている。
+このリポジトリには展開前のコードしか残していない上に、ライブラリは日々書き換わるので、完全な形のコードはコンテストサイトの提出を見ないと分からない。
