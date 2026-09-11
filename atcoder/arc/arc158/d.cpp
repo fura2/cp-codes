@@ -13,22 +13,25 @@ void testcase() {
     lint y = rng() % (p - 1) + 1;
     lint z = rng() % (p - 1) + 1;
     lint s = (x + y + z) % p;
-    if (x == y || x == z || y == z) continue;
+    if (x == y || x == z || y == z || s == 0) continue;
 
     lint x1 = modpow(x, n, p);
     lint y1 = modpow(y, n, p);
     lint z1 = modpow(z, n, p);
     lint s1 = (x1 + y1 + z1) % p;
-    lint x2 = modpow(x, 2 * n, p);
-    lint y2 = modpow(y, 2 * n, p);
-    lint z2 = modpow(z, 2 * n, p);
-    lint s2 = (x2 + y2 + z2) % p;
-    lint x3 = modpow(x, 3 * n, p);
-    lint y3 = modpow(y, 3 * n, p);
-    lint z3 = modpow(z, 3 * n, p);
-    lint s3 = (x3 + y3 + z3) % p;
+    if (s1 == 0) continue;
 
-    if (s == 0 || s1 == 0 || s2 == 0 || s3 == 0) continue;
+    lint x2 = x1 * x1 % p;
+    lint y2 = y1 * y1 % p;
+    lint z2 = z1 * z1 % p;
+    lint s2 = (x2 + y2 + z2) % p;
+    if (s2 == 0) continue;
+
+    lint x3 = x1 * x2 % p;
+    lint y3 = y1 * y2 % p;
+    lint z3 = z1 * z2 % p;
+    lint s3 = (x3 + y3 + z3) % p;
+    if (s3 == 0) continue;
 
     lint t = modpow(s * s1 % p * s2 % p, p - 2, p) * s3 % p;
     vector<lint> ans = {t * x % p, t * y % p, t * z % p};
