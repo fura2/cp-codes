@@ -17,7 +17,6 @@ void testcase() {
   }
 
   lint ans = LINF;
-  vector<int> cnt(n);
   rep (S, 1 << 2 * n) {
     bool ok = true;
     rep (i, m) {
