@@ -96,10 +96,10 @@ void solve(int a, int b, int c, int d, string s) {
         if (accepted[u]) chmax(mx, ndp[u]);
       swap(dp, ndp);
     }
-    if (mx == 0) {
-      output(vector{-1, 0});
-      return;
-    }
+  }
+  if (mx == 0) {
+    output(vector{-1, 0});
+    return;
   }
 
   // count accepted substrings
