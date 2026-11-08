@@ -1,6 +1,7 @@
 #include "template/template.hpp"
 
 // #define MULTI_TESTCASE
+#include "set_operation/moebius_transform.hpp"
 #include "template/main.hpp"
 
 void testcase() {
@@ -20,13 +21,7 @@ void testcase() {
     }
   }
 
-  // fast Moebius transform
-  auto f = g;
-  rrep (i, m) {
-    rrep (S, 1 << m) {
-      if (bit(S, i)) f[S] -= f[S ^ (1 << i)];
-    }
-  }
+  auto f = subset_moebius_transform(g);
 
   lint ans = 0;
   rep (S, 1 << m)
