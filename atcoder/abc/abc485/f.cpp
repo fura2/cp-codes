@@ -29,9 +29,6 @@ void testcase() {
           }
         }
       }
-      rep (i, n + 1) {
-        rep (x, m) chmax(dp[i][x + 1], dp[i][x]);
-      }
     }
 
     lint res = 0;
